@@ -29,7 +29,7 @@ class Main extends Sprite
 		
 		new TestEngine( stage );
 		
-		addChild( new FPS( 10, 10, 0xFFFFFF ) );
+		stage.addChild( new FPS( 10, 10, 0xFFFFFF ) );
 
 	}
 
