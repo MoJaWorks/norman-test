@@ -21,14 +21,17 @@ class MainMenu extends View
 		// Set up the menu object here - should have access to privates as in same class
 		
 		object.add( menu );
-		object.add( new Image( "img/zombie.png" ) );
-		object.get( Image ).blue = 0;
-		object.get( Image ).red = 0;
+		object.add( new Fill( 0xFF0000, 0.2, 1000, 600 ) );
 		
-		var child : GameObject = new GameObject().add( new Fill( 0xFF0000, 1, 100, 100 ) );
-		child.transform.x = 600;
+		var child : GameObject = new GameObject().add( new Image( "img/zombie.png" ) );
+		child.transform.x = 100;
+		child.transform.y = 0;
 		object.addChild( child );
 		
+		//var child2 : GameObject = new GameObject().add( new Image( "img/zombie.png", "barrel.png" ) );
+		//child2.transform.y = 200;
+		//object.addChild( child2 );
+				
 		return object;
 		
 	}
