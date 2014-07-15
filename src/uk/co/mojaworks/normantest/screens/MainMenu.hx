@@ -1,5 +1,6 @@
 package uk.co.mojaworks.normantest.screens;
 
+import openfl.geom.Rectangle;
 import uk.co.mojaworks.norman.components.director.View;
 import uk.co.mojaworks.norman.components.display.Display;
 import uk.co.mojaworks.norman.components.display.Fill;
@@ -26,6 +27,7 @@ class MainMenu extends View
 		var child : GameObject = new GameObject().add( new Image( "img/zombie.png" ) );
 		child.transform.x = 100;
 		child.transform.y = 0;
+		child.display.clipRect = new Rectangle( 0, 0, 100, 100 );
 		object.addChild( child );
 		
 		//var child2 : GameObject = new GameObject().add( new Image( "img/zombie.png", "barrel.png" ) );
