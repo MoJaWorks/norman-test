@@ -4,6 +4,7 @@ import flash.display.Sprite;
 import flash.events.Event;
 import flash.Lib;
 import openfl.display.FPS;
+import openfl.geom.Rectangle;
 
 /**
  * ...
@@ -29,7 +30,7 @@ class Main extends Sprite
 		
 		new TestEngine( stage );
 		
-		stage.addChild( new FPS( 10, 10, 0xFFFFFF ) );
+		stage.addChild( new FPS( 10, 10, 0xFFFFFF ) );	
 
 	}
 

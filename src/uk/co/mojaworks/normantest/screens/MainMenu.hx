@@ -29,7 +29,7 @@ class MainMenu extends View
 		//child.transform.x = 100;
 		//child.transform.y = 0;
 		//child.transform.rotation = 0.5;
-		child.display.clipRect = new Rectangle( 100, 100, 200, 200 );
+		//child.display.clipRect = new Rectangle( 100, 100, 200, 200 );
 		object.addChild( child );
 		
 		//var child2 : GameObject = new GameObject().add( new Image( "img/zombie.png", "barrel.png" ) );
