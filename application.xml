@@ -5,6 +5,8 @@
 	<!-- metadata, make sure 'package' is at least 3 segments (ie. com.mycompany.myproject) -->
 	<meta title="NormanTest" package="uk.co.mojaworks.normantest.NormanTest" version="1.0.0" company="Simon" />
 	
+	<haxedef name="dom"/>
+	
 	<!-- output -->
 	<app main="uk.co.mojaworks.normantest.Main" file="NormanTest" path="bin" />
 	

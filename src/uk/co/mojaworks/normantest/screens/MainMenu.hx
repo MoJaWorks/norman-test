@@ -5,6 +5,7 @@ import uk.co.mojaworks.norman.components.director.View;
 import uk.co.mojaworks.norman.components.display.Display;
 import uk.co.mojaworks.norman.components.display.Fill;
 import uk.co.mojaworks.norman.components.display.Image;
+import uk.co.mojaworks.norman.core.Core;
 import uk.co.mojaworks.norman.core.GameObject;
 
 /**
@@ -24,6 +25,7 @@ class MainMenu extends View
 		object.add( menu );
 		object.add( new Fill( 0xFF0000, 1, 1000, 600 ) );
 		object.display.clipRect = new Rectangle( 100, 100, 100, 100 );
+		object.transform.x = 100;
 		
 		var child : GameObject = new GameObject().add( new Image( "img/zombie.png" ) );
 		//child.transform.x = 100;
@@ -32,6 +34,8 @@ class MainMenu extends View
 		//child.display.clipRect = new Rectangle( 100, 100, 200, 200 );
 		object.addChild( child );
 		
+		trace(child.display.getBounds( Core.instance.root.transform ));
+			
 		//var child2 : GameObject = new GameObject().add( new Image( "img/zombie.png", "barrel.png" ) );
 		//child2.transform.y = 200;
 		//object.addChild( child2 );
