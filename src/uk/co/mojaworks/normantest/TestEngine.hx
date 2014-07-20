@@ -12,6 +12,7 @@ import uk.co.mojaworks.normantest.screens.MainMenu;
  */
 class TestEngine extends GameEngine
 {
+	var screen:GameObject;
 
 	public function new(stage) 
 	{
@@ -23,9 +24,17 @@ class TestEngine extends GameEngine
 	{
 		super.onStartupComplete();
 		
-		var screen : GameObject = MainMenu.construct();
+		screen = MainMenu.construct();
 		core.root.get(Director).showScreen( screen );
 		
+	}
+	
+	override public function onUpdate(seconds:Float):Void 
+	{
+		super.onUpdate(seconds);
+		screen.transform.rotation += 0.1;
+		
+		//trace(screen.display.getBounds( core.root ));
 	}
 	
 }

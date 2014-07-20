@@ -14,6 +14,7 @@ import uk.co.mojaworks.norman.core.GameObject;
  */
 class MainMenu extends View
 {
+	public var child:GameObject;
 
 	public static function construct() : GameObject {
 		
@@ -24,17 +25,19 @@ class MainMenu extends View
 		
 		object.add( menu );
 		object.add( new Fill( 0xFF0000, 1, 1000, 600 ) );
-		object.display.clipRect = new Rectangle( 100, 100, 100, 100 );
-		object.transform.x = 100;
+		object.display.clipRect = new Rectangle( 0, 0, 100, 100 );
+		object.transform.x = 200;
+		object.transform.y = 200;
+		object.transform.rotation = 0.5;
 		
-		var child : GameObject = new GameObject().add( new Image( "img/zombie.png" ) );
+		menu.child = new GameObject().add( new Image( "img/zombie.png" ) );
 		//child.transform.x = 100;
 		//child.transform.y = 0;
 		//child.transform.rotation = 0.5;
 		//child.display.clipRect = new Rectangle( 100, 100, 200, 200 );
-		object.addChild( child );
+		object.addChild( menu.child );
 		
-		trace(child.display.getBounds( Core.instance.root.transform ));
+		trace(object.display.getBounds( Core.instance.root ));
 			
 		//var child2 : GameObject = new GameObject().add( new Image( "img/zombie.png", "barrel.png" ) );
 		//child2.transform.y = 200;
