@@ -2,6 +2,7 @@ package uk.co.mojaworks.normantest;
 
 import uk.co.mojaworks.norman.components.director.Director;
 import uk.co.mojaworks.norman.components.display.Display;
+import uk.co.mojaworks.norman.components.display.Fill;
 import uk.co.mojaworks.norman.components.engine.GameEngine;
 import uk.co.mojaworks.norman.core.GameObject;
 import uk.co.mojaworks.normantest.screens.MainMenu;
@@ -26,6 +27,8 @@ class TestEngine extends GameEngine
 		
 		screen = MainMenu.construct();
 		core.root.get(Director).showScreen( screen );
+		
+		core.root.addChild( new GameObject().add( new Fill( 0x0000FF, 1, 100, 100 ) ) );
 		
 	}
 	

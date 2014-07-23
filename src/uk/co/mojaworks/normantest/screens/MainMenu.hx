@@ -25,7 +25,7 @@ class MainMenu extends View
 		
 		object.add( menu );
 		object.add( new Fill( 0xFF0000, 1, 1000, 600 ) );
-		//object.display.clipRect = new Rectangle( 50, 50, 150, 150 );
+		object.display.clipRect = new Rectangle( 0, 0, 300, 300 );
 		object.transform.x = 200;
 		object.transform.y = 200;
 		//object.transform.rotation = 0.5;
@@ -34,7 +34,7 @@ class MainMenu extends View
 		//child.transform.x = 100;
 		//child.transform.y = 0;
 		//menu.child.transform.rotation = 0.25;
-		menu.child.display.clipRect = new Rectangle( 100, 100, 50, 50 );
+		menu.child.display.clipRect = new Rectangle( 0, 0, 50, 50 );
 		object.addChild( menu.child );
 		
 		trace(object.display.getBounds( Core.instance.root ));
