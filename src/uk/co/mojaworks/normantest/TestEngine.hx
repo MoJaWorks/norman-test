@@ -35,7 +35,7 @@ class TestEngine extends GameEngine
 	override public function onUpdate(seconds:Float):Void 
 	{
 		super.onUpdate(seconds);
-		screen.transform.rotation += 0.01;
+		//screen.transform.rotation += 0.01;
 		
 		//trace(screen.display.getBounds( core.root ));
 	}

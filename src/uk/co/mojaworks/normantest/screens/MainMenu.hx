@@ -5,6 +5,7 @@ import uk.co.mojaworks.norman.components.director.View;
 import uk.co.mojaworks.norman.components.display.Display;
 import uk.co.mojaworks.norman.components.display.Fill;
 import uk.co.mojaworks.norman.components.display.Image;
+import uk.co.mojaworks.norman.components.input.TouchListener;
 import uk.co.mojaworks.norman.core.Core;
 import uk.co.mojaworks.norman.core.GameObject;
 
@@ -29,6 +30,7 @@ class MainMenu extends View
 		object.transform.x = 200;
 		object.transform.y = 200;
 		object.transform.rotation = 0.5;
+		object.add( new TouchListener() );
 		
 		//var obj2 : GameObject = new GameObject().add( new Fill( 0x00FF00, 1, 250, 250 ) );
 		//obj2.transform.setPosition( 50, 50 );
@@ -38,6 +40,7 @@ class MainMenu extends View
 		
 		
 		menu.child = new GameObject().add( new Image( "img/zombie.png" ) );
+		menu.child.add( new TouchListener() );
 		//child.transform.x = 100;
 		//child.transform.y = 0;
 		//menu.child.transform.rotation = 0.25;
