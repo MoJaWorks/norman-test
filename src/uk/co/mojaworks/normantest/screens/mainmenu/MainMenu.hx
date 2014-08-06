@@ -1,6 +1,7 @@
 package uk.co.mojaworks.normantest.screens.mainmenu;
 
 import openfl.geom.Rectangle;
+import uk.co.mojaworks.norman.components.director.View;
 import uk.co.mojaworks.norman.components.display.Fill;
 import uk.co.mojaworks.norman.components.display.Image;
 import uk.co.mojaworks.norman.components.input.TouchListener;
@@ -39,7 +40,9 @@ class MainMenu extends Prefab
 		menu.child.add( new TouchListener() );
 		menu.child.display.clipRect = new Rectangle( 100, 100, 50, 50 );
 		gameObject.addChild( menu.child );
-			
+		
+		
+		trace( menu.child.findAncestorThatHas(View) );
 	}
 	
 }
