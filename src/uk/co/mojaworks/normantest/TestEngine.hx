@@ -1,11 +1,9 @@
 package uk.co.mojaworks.normantest;
 
 import uk.co.mojaworks.norman.components.director.Director;
-import uk.co.mojaworks.norman.components.display.Display;
-import uk.co.mojaworks.norman.components.display.Fill;
 import uk.co.mojaworks.norman.components.engine.GameEngine;
 import uk.co.mojaworks.norman.core.GameObject;
-import uk.co.mojaworks.normantest.screens.MainMenu;
+import uk.co.mojaworks.normantest.screens.mainmenu.MainMenu;
 
 /**
  * ...
@@ -17,7 +15,7 @@ class TestEngine extends GameEngine
 
 	public function new(stage) 
 	{
-		super(stage);
+		super( stage, 1000, 600 );
 		
 	}
 		
@@ -25,7 +23,7 @@ class TestEngine extends GameEngine
 	{
 		super.onStartupComplete();
 		
-		screen = MainMenu.construct();
+		screen = new GameObject().add( new MainMenu() );
 		core.root.get(Director).showScreen( screen );
 		
 		//core.root.addChild( new GameObject().add( new Fill( 0x0000FF, 1, 100, 100 ) ) );
