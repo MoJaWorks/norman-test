@@ -2,6 +2,7 @@ package uk.co.mojaworks.normantest.screens.mainmenu;
 
 import openfl.geom.Rectangle;
 import uk.co.mojaworks.norman.components.director.View;
+import uk.co.mojaworks.norman.components.display.Display;
 import uk.co.mojaworks.norman.components.display.Fill;
 import uk.co.mojaworks.norman.components.display.Image;
 import uk.co.mojaworks.norman.components.input.TouchListener;
@@ -42,15 +43,17 @@ class MainMenu extends Prefab
 		//menu.child.display.clipRect = new Rectangle( 100, 100, 50, 50 );
 		//gameObject.addChild( menu.child );
 		
+		for ( i in 0...20 ) {
+			gameObject.addChild( new GameObject() );
+		}
+		
 		var button_obj : GameObject = new GameObject();
 		var button : Button = new Button();
 		button.setup( new Fill( 0xFF0000, 1, 100, 100 ), new Fill( 0x00FF00, 1, 100, 100 ) );
 		button_obj.add( button );
 		gameObject.addChild( button_obj );
+				
 		
-		
-		
-		//trace( menu.child.findAncestorThatHas(View) );
 	}
 	
 }
