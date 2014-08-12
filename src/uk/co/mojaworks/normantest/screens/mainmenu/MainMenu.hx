@@ -1,14 +1,9 @@
 package uk.co.mojaworks.normantest.screens.mainmenu;
 
-import openfl.geom.Rectangle;
-import uk.co.mojaworks.norman.components.director.View;
-import uk.co.mojaworks.norman.components.display.Display;
 import uk.co.mojaworks.norman.components.display.Fill;
-import uk.co.mojaworks.norman.components.display.Image;
 import uk.co.mojaworks.norman.components.input.TouchListener;
-import uk.co.mojaworks.norman.components.interactive.Button;
 import uk.co.mojaworks.norman.components.Prefab;
-import uk.co.mojaworks.norman.core.Core;
+import uk.co.mojaworks.norman.components.ui.Button;
 import uk.co.mojaworks.norman.core.GameObject;
 
 /**
@@ -52,7 +47,8 @@ class MainMenu extends Prefab
 		button.setup( new Fill( 0xFF0000, 1, 100, 100 ), new Fill( 0x00FF00, 1, 100, 100 ) );
 		button_obj.add( button );
 		gameObject.addChild( button_obj );
-				
+		
+		
 		
 	}
 	

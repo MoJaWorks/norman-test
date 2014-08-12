@@ -4,7 +4,6 @@ import flash.display.Sprite;
 import flash.events.Event;
 import flash.Lib;
 import openfl.display.FPS;
-import openfl.geom.Rectangle;
 
 /**
  * ...
