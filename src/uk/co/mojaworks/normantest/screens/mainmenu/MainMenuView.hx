@@ -9,12 +9,18 @@ import uk.co.mojaworks.norman.core.GameObject;
  */
 class MainMenuView extends View
 {
-	public var child:GameObject;
+	public var button : GameObject;
 	
 	public function new() 
 	{
 		super();
+	}
+	
+	override public function onUpdate(seconds:Float):Void 
+	{
+		super.onUpdate(seconds);
 		
+		button.get(View).onUpdate( seconds );
 	}
 	
 }
