@@ -1,8 +1,10 @@
 package uk.co.mojaworks.normantest.screens.mainmenu;
 
+import openfl.text.TextFormat;
 import uk.co.mojaworks.norman.components.display.Display;
 import uk.co.mojaworks.norman.components.display.Fill;
 import uk.co.mojaworks.norman.components.display.Image;
+import uk.co.mojaworks.norman.components.display.Text;
 import uk.co.mojaworks.norman.components.input.TouchListener;
 import uk.co.mojaworks.norman.components.Prefab;
 import uk.co.mojaworks.norman.components.ui.Button;
@@ -36,7 +38,8 @@ class MainMenu extends Prefab
 		menu.button.add( button );
 		gameObject.addChild( menu.button );
 		
-		var cover : GameObject = new GameObject().add( new Image( "img/zombie.png", "zhead.png" ));
+		var text : Text = new Text( "Hello World" );
+		var cover : GameObject = new GameObject().add( text );
 		cover.add( new TouchListener() );
 		cover.transform.setPosition( 50, 50 );
 		gameObject.addChild( cover );
