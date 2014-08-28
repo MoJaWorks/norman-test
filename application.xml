@@ -18,7 +18,7 @@
 	<source path="src" />
 	<haxelib name="openfl" />
 	<haxelib name="actuate" />
-	<haxelib name="norman" />
+	<haxelib name="norman" /> 
 	
 	<!-- assets -->
 	<icon path="assets/openfl.svg" />

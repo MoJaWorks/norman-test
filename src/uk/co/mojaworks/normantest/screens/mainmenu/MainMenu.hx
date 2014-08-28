@@ -38,11 +38,11 @@ class MainMenu extends Prefab
 		menu.button.add( button );
 		gameObject.addChild( menu.button );
 		
-		var text : Text = new Text( "Hello World" ).setColour32( 0x9900FF00 );
-		var cover : GameObject = new GameObject().add( text );
-		cover.add( new TouchListener() );
-		cover.transform.setPosition( 50, 50 );
-		gameObject.addChild( cover );
+		var text : Text = new Text( "Hello World" ).setColour32( 0xFF00FF00 ).setFontSize( 30 ).setBold(true);
+		menu.text = new GameObject().add( text );
+		menu.text.add( new TouchListener() );
+		menu.text.transform.setPosition( 50, 50 );
+		gameObject.addChild( menu.text );
 		
 	}
 	
