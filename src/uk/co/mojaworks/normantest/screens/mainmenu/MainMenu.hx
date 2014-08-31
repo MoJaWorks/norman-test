@@ -1,13 +1,13 @@
 package uk.co.mojaworks.normantest.screens.mainmenu;
 
 import openfl.text.TextFormat;
+import uk.co.mojaworks.norman.components.director.ui.Button;
 import uk.co.mojaworks.norman.components.display.Display;
 import uk.co.mojaworks.norman.components.display.Fill;
 import uk.co.mojaworks.norman.components.display.Image;
 import uk.co.mojaworks.norman.components.display.Text;
 import uk.co.mojaworks.norman.components.input.TouchListener;
 import uk.co.mojaworks.norman.components.Prefab;
-import uk.co.mojaworks.norman.components.ui.Button;
 import uk.co.mojaworks.norman.core.GameObject;
 
 /**

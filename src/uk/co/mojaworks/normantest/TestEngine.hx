@@ -1,5 +1,6 @@
 package uk.co.mojaworks.normantest;
 
+import uk.co.mojaworks.norman.components.director.Director;
 import uk.co.mojaworks.norman.core.GameObject;
 import uk.co.mojaworks.norman.engine.NormanApp;
 import uk.co.mojaworks.normantest.screens.mainmenu.MainMenu;
@@ -23,7 +24,7 @@ class TestEngine extends NormanApp
 		super.onStartupComplete();
 		
 		screen = new GameObject().add( new MainMenu() );
-		core.app.director.moveToView( screen );
+		root.get(Director).moveToView( screen );
 		
 		//core.root.addChild( new GameObject().add( new Fill( 0x0000FF, 1, 100, 100 ) ) );
 		

@@ -1,7 +1,7 @@
 package uk.co.mojaworks.normantest.screens.mainmenu ;
 
+import uk.co.mojaworks.norman.components.director.ui.View;
 import uk.co.mojaworks.norman.components.display.Text;
-import uk.co.mojaworks.norman.components.ui.View;
 import uk.co.mojaworks.norman.core.GameObject;
 
 /**
