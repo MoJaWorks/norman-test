@@ -30,15 +30,15 @@ class MainMenu extends Prefab
 		
 		// Set up the menu object here - should have access to privates as in same class
 		gameObject.add( menu );
-		gameObject.add( new Fill( 0x0000FF, 1, 1000, 600 ) );
+		gameObject.add( new Fill( 0xFF0000FF, 1, 1000, 600 ) );
 		
 		menu.button = new GameObject().add( new Display() ).add( new TouchListener() );
 		var button : Button = new Button();
-		button.setup( new Fill( 0xFF0000, 1, 100, 100 ), new Fill( 0x00FF00, 1, 100, 100 ) );
+		button.setup( new Fill( 0xFFFF0000, 1, 100, 100 ), new Fill( 0xFF00FF00, 1, 100, 100 ) );
 		menu.button.add( button );
 		gameObject.addChild( menu.button );
 		
-		var text : Text = new Text( "Hello World" ).setColour32( 0xFF00FF00 ).setFontSize( 30 ).setBold(true);
+		var text : Text = new Text( "Hello World" ).setColor( 0xFF00FF00 ).setFontSize( 30 ).setBold(true);
 		menu.text = new GameObject().add( text );
 		menu.text.add( new TouchListener() );
 		menu.text.transform.setPosition( 50, 50 );

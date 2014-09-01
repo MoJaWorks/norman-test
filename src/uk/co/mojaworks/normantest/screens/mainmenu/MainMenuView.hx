@@ -23,7 +23,6 @@ class MainMenuView extends View
 		super.onUpdate(seconds);
 		
 		button.get(View).onUpdate( seconds );
-		
 		text.get(Text).setText( Std.string((Std.parseInt( text.get(Text).text )) + 1) );
 	}
 	

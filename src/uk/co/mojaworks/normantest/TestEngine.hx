@@ -26,16 +26,11 @@ class TestEngine extends NormanApp
 		screen = new GameObject().add( new MainMenu() );
 		root.get(Director).moveToView( screen );
 		
-		//core.root.addChild( new GameObject().add( new Fill( 0x0000FF, 1, 100, 100 ) ) );
-		
 	}
 	
 	override public function onUpdate(seconds:Float):Void 
 	{
 		super.onUpdate(seconds);
-		//screen.transform.rotation += 0.01;
-		
-		//trace(screen.display.getBounds( core.root ));
 	}
 	
 }
