@@ -8,7 +8,7 @@
 	<haxedef name="dom"/>
 	
 	<!-- output -->
-	<app main="uk.co.mojaworks.normantest.Main" file="NormanTest" path="bin" />
+	<app main="uk.co.mojaworks.normantest.TestEngine" file="NormanTest" path="bin" />
 	
 	<window background="#000000" fps="60" />
 	<window width="1000" height="600" unless="mobile" />
@@ -16,8 +16,6 @@
 	
 	<!-- classpath, haxe libs -->
 	<source path="src" />
-	<haxelib name="openfl" />
-	<haxelib name="actuate" />
 	<haxelib name="norman" /> 
 	
 	<!-- assets -->
