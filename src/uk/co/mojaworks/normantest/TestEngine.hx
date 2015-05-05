@@ -1,4 +1,5 @@
 package uk.co.mojaworks.normantest;
+import uk.co.mojaworks.norman.data.NormanConfigData;
 import uk.co.mojaworks.norman.NormanApp;
 
 /**
@@ -9,7 +10,12 @@ class TestEngine extends NormanApp
 {
 	
 	public function new() {
-		super();
+		
+		var config : NormanConfigData = new NormanConfigData();
+		config.targetScreenWidth = 720;
+		config.targetScreenHeight = 1280;
+		
+		super( config );
 	}
 	
 	//var screen : GameObject;
