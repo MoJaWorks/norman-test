@@ -1,6 +1,10 @@
 package uk.co.mojaworks.normantest;
 import uk.co.mojaworks.norman.data.NormanConfigData;
+import uk.co.mojaworks.norman.display.FillSprite;
+import uk.co.mojaworks.norman.display.Sprite;
 import uk.co.mojaworks.norman.NormanApp;
+import uk.co.mojaworks.norman.systems.Systems;
+import uk.co.mojaworks.norman.utils.Color;
 
 /**
  * ...
@@ -16,6 +20,16 @@ class TestEngine extends NormanApp
 		config.targetScreenHeight = 1280;
 		
 		super( config );
+	}
+	
+	override function onStartupComplete() 
+	{
+		super.onStartupComplete();
+		
+		var s : FillSprite = new FillSprite( Color.RED, 100, 100 );
+		s.transform.x = 100;
+		s.transform.y = 100;
+		Systems.view.root.addChild( s );
 	}
 		
 }
