@@ -16,8 +16,8 @@
   </output>
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
-    <class path="C:\Users\smorris\Documents\MyProjects\Norman" />
-    <class path="C:\HaxeToolkit\haxe\lib\lime\2,4,1" />
+    <class path="D:\Projects\Haxe\Norman" />
+    <class path="D:\Projects\Haxe\haxelib\lime\2,4,1" />
     <class path="src" />
     <class path="bin\windows\neko\haxe" />
   </classpaths>
@@ -28,7 +28,7 @@
     <option noInlineOnDebug="False" />
     <option mainClass="ApplicationMain" />
     <option enabledebug="True" />
-    <option additional="#--macro keep(&quot;uk.co.mojaworks.normantest.TestEngine&quot;)" />
+    <option additional="#--macro keep(&quot;uk.co.mojaworks.normantest.TestEngine&quot;)&#xA;-debug " />
   </build>
   <!-- haxelib libraries -->
   <haxelib>
