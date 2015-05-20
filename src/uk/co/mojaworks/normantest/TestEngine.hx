@@ -29,13 +29,13 @@ class TestEngine extends NormanApp
 		var s : ImageSprite = new ImageSprite( Systems.renderer.createTextureFromAsset( "img/zombie.png" ) );
 		s.transform.x = 100;
 		s.transform.y = 100;
-		s.transform.rotationDegrees = 45;
+		//s.transform.rotationDegrees = 45;
 		Systems.view.root.addChild( s );
 		
 		var f : FillSprite = new FillSprite( Color.RED, 100, 100 );
 		f.transform.x = 300;
 		f.transform.y = 100;
-		f.transform.rotationDegrees = 45;
+		//f.transform.rotationDegrees = 45;
 		s.addChild( f );
 		
 	}
