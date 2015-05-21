@@ -26,6 +26,8 @@ class TestEngine extends NormanApp
 	{
 		super.onStartupComplete();
 		
+		Systems.view.root.addChild( new FillSprite( Color.GREEN, Systems.viewport.stageWidth, Systems.viewport.stageHeight ) );
+		
 		var s : ImageSprite = new ImageSprite( Systems.renderer.createTextureFromAsset( "img/zombie.png" ) );
 		s.transform.x = 100;
 		s.transform.y = 100;
