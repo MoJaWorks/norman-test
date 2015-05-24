@@ -11,7 +11,7 @@
 	<app main="uk.co.mojaworks.normantest.TestEngine" file="NormanTest" path="bin" />
 	
 	<window background="#000000" fps="60" />
-	<window width="1000" height="600" unless="mobile" />
+	<window width="480" height="800" unless="mobile" />
 	<window orientation="landscape" vsync="false" antialiasing="0" if="cpp" />
 	
 	<!-- classpath, haxe libs -->

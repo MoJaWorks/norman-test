@@ -27,20 +27,39 @@ class TestEngine extends NormanApp
 	{
 		super.onStartupComplete();
 		
-		var b : FillSprite = new FillSprite( Color.GREEN, Systems.viewport.stageWidth, Systems.viewport.stageHeight );
+		var b : FillSprite = new FillSprite( Color.RED, Systems.viewport.stageWidth, Systems.viewport.stageHeight );
 		Systems.view.root.addChild( b );
+		trace("b = ", b.id );
 		
-		var s : RenderSprite = new RenderSprite( );
+		var o : ImageSprite = new ImageSprite( Systems.renderer.createTextureFromAsset( "img/zombie.png"), "barrel.png" );
+		o.color.a = 0.5;
+		o.transform.x = 300;
+		o.transform.y = 20;
+		o.transform.scaleX = 2;
+		o.transform.scaleY = 2;
+		//f.transform.rotationDegrees = 45;
+		Systems.view.root.addChild( o );
+		trace("o = ", o.id );
+		
+		var s : RenderSprite = new RenderSprite( 200, 200 );
+		//s.alpha = 0.5;
 		s.transform.x = 0;
 		s.transform.y = 0;
 		//s.transform.rotationDegrees = 45;
 		Systems.view.root.addChild( s );
+		trace("s = ", s.id );
 		
-		var f : FillSprite = new FillSprite( Color.RED, 100, 100 );
-		f.transform.x = 0;
-		f.transform.y = 0;
+		var f : ImageSprite = new ImageSprite( Systems.renderer.createTextureFromAsset( "img/zombie.png"), "barrel.png" );
+		//f.color.a = 0.5;
+		//f.color.r = 0;
+		f.alpha = 0.5;
+		f.transform.x = 20;
+		f.transform.y = 20;
+		f.transform.scaleX = 2;
+		f.transform.scaleY = 2;
 		//f.transform.rotationDegrees = 45;
 		s.addChild( f );
+		trace("f = ", f.id );
 		
 	}
 		
