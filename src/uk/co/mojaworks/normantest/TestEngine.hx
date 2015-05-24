@@ -2,6 +2,7 @@ package uk.co.mojaworks.normantest;
 import uk.co.mojaworks.norman.data.NormanConfigData;
 import uk.co.mojaworks.norman.display.FillSprite;
 import uk.co.mojaworks.norman.display.ImageSprite;
+import uk.co.mojaworks.norman.display.RenderSprite;
 import uk.co.mojaworks.norman.NormanApp;
 import uk.co.mojaworks.norman.systems.Systems;
 import uk.co.mojaworks.norman.utils.Color;
@@ -26,15 +27,18 @@ class TestEngine extends NormanApp
 	{
 		super.onStartupComplete();
 		
-		var s : ImageSprite = new ImageSprite( Systems.renderer.createTextureFromAsset( "img/zombie.png" ) );
-		s.transform.x = 100;
-		s.transform.y = 100;
+		var b : FillSprite = new FillSprite( Color.GREEN, Systems.viewport.stageWidth, Systems.viewport.stageHeight );
+		Systems.view.root.addChild( b );
+		
+		var s : RenderSprite = new RenderSprite( );
+		s.transform.x = 0;
+		s.transform.y = 0;
 		//s.transform.rotationDegrees = 45;
 		Systems.view.root.addChild( s );
 		
 		var f : FillSprite = new FillSprite( Color.RED, 100, 100 );
-		f.transform.x = 300;
-		f.transform.y = 100;
+		f.transform.x = 0;
+		f.transform.y = 0;
 		//f.transform.rotationDegrees = 45;
 		s.addChild( f );
 		
