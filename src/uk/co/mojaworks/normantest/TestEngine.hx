@@ -30,7 +30,7 @@ class TestEngine extends NormanApp
 	{
 		super.onStartupComplete();
 		
-		var b : FillSprite = new FillSprite( Color.RED, Systems.viewport.stageWidth, Systems.viewport.stageHeight );
+		var b : FillSprite = new FillSprite( Color.BLUE, Systems.viewport.stageWidth, Systems.viewport.stageHeight );
 		Systems.view.root.addChild( b );
 		
 		var o : Sprite = new ImageSprite( Systems.renderer.createTextureFromAsset( "img/zombie.png"), "barrel.png" );
@@ -41,8 +41,11 @@ class TestEngine extends NormanApp
 		o.transform.scaleY = 2;
 		Systems.view.root.addChild( o );
 		
-		var s : RenderSprite = new RenderSprite( 200, 200 );
+		var s : RenderSprite = new RenderSprite( 300, 300 );
 		Systems.view.root.addChild( s );
+		
+		var g : ImageSprite = new ImageSprite( Systems.renderer.createTextureFromAsset( "img/zombie.png" ), "zhead.png" );
+		s.addChild( g );
 		
 		var f : ImageSprite = new ImageSprite( Systems.renderer.createTextureFromAsset( "img/zombie.png"), "barrel.png" );
 		f.alpha = 0;
@@ -51,6 +54,7 @@ class TestEngine extends NormanApp
 		f.transform.scaleX = 2;
 		f.transform.scaleY = 2;
 		s.addChild( f );
+		
 		
 		Actuate.tween( f, 3, { alpha: 1 } ).repeat( 200 ).ease( Linear.easeNone );
 		Actuate.tween( o, 3, { alpha: 1 } ).repeat( 200 ).ease( Linear.easeNone );
