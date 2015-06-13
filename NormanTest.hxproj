@@ -16,15 +16,15 @@
   </output>
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
-    <class path="D:\Projects\Haxe\haxelib\actuate\1,8,5" />
+    <class path="D:\Projects\Haxe\haxelib\actuate\1,8,6" />
     <class path="D:\Projects\Haxe\Norman" />
-    <class path="D:\Projects\Haxe\haxelib\lime\2,4,1" />
+    <class path="D:\Projects\Haxe\haxelib\lime\2,4,3" />
     <class path="src" />
     <class path="bin\windows\neko\haxe" />
   </classpaths>
   <!-- Build options -->
   <build>
-    <option directives="actuate=1.8.5&#xA;norman=0.1.2&#xA;lime=2.4.1&#xA;dom&#xA;tools=2.4.1&#xA;no-compilation&#xA;lime-native&#xA;windows&#xA;desktop" />
+    <option directives="actuate=1.8.6&#xA;norman=0.1.2&#xA;lime=2.4.3&#xA;dom&#xA;tools=2.4.3&#xA;no-compilation&#xA;lime-native&#xA;windows&#xA;desktop" />
     <option flashStrict="False" />
     <option noInlineOnDebug="False" />
     <option mainClass="ApplicationMain" />
