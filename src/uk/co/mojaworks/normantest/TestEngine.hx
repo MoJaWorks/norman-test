@@ -35,7 +35,7 @@ class TestEngine extends NormanApp
 				
 		var m : MaskedSprite = new MaskedSprite( Systems.renderer.createTextureFromAsset( "img/zombie.png" ), "zhead.png" );
 		m.x = 50;
-		Systems.view.root.addChild( m );
+		Systems.director.root.addChild( m );
 
 		
 		var b : ImageSprite = new ImageSprite( Systems.renderer.createTextureFromAsset( "img/zombie.png" ), "barrel.png" );
