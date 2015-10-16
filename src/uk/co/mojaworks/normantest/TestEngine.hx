@@ -1,18 +1,10 @@
 package uk.co.mojaworks.normantest;
-import motion.Actuate;
-import motion.easing.Linear;
+import uk.co.mojaworks.norman.components.Transform;
 import uk.co.mojaworks.norman.data.NormanConfigData;
-import uk.co.mojaworks.norman.debug.FPS;
-import uk.co.mojaworks.norman.display.FillSprite;
-import uk.co.mojaworks.norman.display.ImageSprite;
-import uk.co.mojaworks.norman.display.MaskedSprite;
-import uk.co.mojaworks.norman.display.RenderSprite;
-import uk.co.mojaworks.norman.display.Sprite;
-import uk.co.mojaworks.norman.display.TextSprite;
+import uk.co.mojaworks.norman.factory.GameObject;
+import uk.co.mojaworks.norman.factory.SpriteFactory;
 import uk.co.mojaworks.norman.NormanApp;
 import uk.co.mojaworks.norman.systems.Systems;
-import uk.co.mojaworks.norman.utils.Color;
-import uk.co.mojaworks.norman.utils.FontUtils;
 
 /**
  * ...
@@ -32,16 +24,18 @@ class TestEngine extends NormanApp
 	override function onStartupComplete() 
 	{
 		super.onStartupComplete();
+		
+		var image : GameObject = SpriteFactory.createImageSprite( Systems.renderer.createTextureFromAsset( "img/zombie.png" ), "zhead.png" );
+		Systems.director.rootObject.transform.addChild( image.transform );
 				
-		var m : MaskedSprite = new MaskedSprite( Systems.renderer.createTextureFromAsset( "img/zombie.png" ), "zhead.png" );
-		m.x = 50;
-		Systems.director.root.addChild( m );
+		//var m : MaskedSprite = new MaskedSprite( Systems.renderer.createTextureFromAsset( "img/zombie.png" ), "zhead.png" );
+		//m.x = 50;
+		//Systems.director.root.addChild( m );
 
 		
-		var b : ImageSprite = new ImageSprite( Systems.renderer.createTextureFromAsset( "img/zombie.png" ), "barrel.png" );
-		m.addChild( b );
+		//var b : ImageSprite = new ImageSprite( Systems.renderer.createTextureFromAsset( "img/zombie.png" ), "barrel.png" );
+		//m.addChild( b );
 		
-				
 	}
 	
 	override public function updateApp(seconds:Float):Void 
