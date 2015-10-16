@@ -1,10 +1,14 @@
 package uk.co.mojaworks.normantest;
+import uk.co.mojaworks.norman.components.renderer.ShapeRenderer.FillShape;
 import uk.co.mojaworks.norman.components.Transform;
 import uk.co.mojaworks.norman.data.NormanConfigData;
+import uk.co.mojaworks.norman.display.MaskedSprite;
 import uk.co.mojaworks.norman.factory.GameObject;
 import uk.co.mojaworks.norman.factory.SpriteFactory;
 import uk.co.mojaworks.norman.NormanApp;
 import uk.co.mojaworks.norman.systems.Systems;
+import uk.co.mojaworks.norman.utils.Color;
+import uk.co.mojaworks.norman.utils.FontUtils;
 
 /**
  * ...
@@ -25,16 +29,21 @@ class TestEngine extends NormanApp
 	{
 		super.onStartupComplete();
 		
+		var mask : GameObject = SpriteFactory.createMask( Systems.renderer.createTextureFromAsset("img/zombie.png"), "barrel.png" );
+		Systems.director.rootObject.transform.addChild( mask.transform );
+		
 		var image : GameObject = SpriteFactory.createImageSprite( Systems.renderer.createTextureFromAsset( "img/zombie.png" ), "zhead.png" );
 		Systems.director.rootObject.transform.addChild( image.transform );
-				
-		//var m : MaskedSprite = new MaskedSprite( Systems.renderer.createTextureFromAsset( "img/zombie.png" ), "zhead.png" );
-		//m.x = 50;
-		//Systems.director.root.addChild( m );
-
+			
+		var fill : GameObject = SpriteFactory.createFilledSprite( Color.BLUE, 200, 200, FillShape.Ellipse );
+		mask.transform.addChild( fill.transform );
 		
-		//var b : ImageSprite = new ImageSprite( Systems.renderer.createTextureFromAsset( "img/zombie.png" ), "barrel.png" );
-		//m.addChild( b );
+		var render : GameObject = SpriteFactory.createRenderTexture( 200, 200 );
+		render.transform.scale = 2;
+		fill.transform.addChild( render.transform );
+		
+		var text : GameObject = SpriteFactory.createTextSprite( "Hello", FontUtils.createFontFromAsset("default/arial.fnt") );
+		render.transform.addChild( text.transform );
 		
 	}
 	
