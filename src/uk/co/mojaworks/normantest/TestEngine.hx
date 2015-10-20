@@ -1,12 +1,15 @@
 package uk.co.mojaworks.normantest;
+import uk.co.mojaworks.norman.components.delegates.SimpleButtonUIDelegate;
 import uk.co.mojaworks.norman.components.renderer.ShapeRenderer.FillShape;
 import uk.co.mojaworks.norman.components.Transform;
 import uk.co.mojaworks.norman.data.NormanConfigData;
 import uk.co.mojaworks.norman.display.MaskedSprite;
 import uk.co.mojaworks.norman.factory.GameObject;
 import uk.co.mojaworks.norman.factory.SpriteFactory;
+import uk.co.mojaworks.norman.factory.UIFactory;
 import uk.co.mojaworks.norman.NormanApp;
 import uk.co.mojaworks.norman.systems.Systems;
+import uk.co.mojaworks.norman.systems.ui.MouseEvent;
 import uk.co.mojaworks.norman.utils.Color;
 import uk.co.mojaworks.norman.utils.FontUtils;
 
@@ -44,6 +47,12 @@ class TestEngine extends NormanApp
 		
 		var text : GameObject = SpriteFactory.createTextSprite( "Hello", FontUtils.createFontFromAsset("default/arial.fnt") );
 		render.transform.addChild( text.transform );
+		
+		var delegate : SimpleButtonUIDelegate = new SimpleButtonUIDelegate();
+		delegate.enabled = true;
+		var button : GameObject = UIFactory.createImageButton( delegate, Systems.renderer.createTextureFromAsset("img/zombie.png"), "barrel.png" );
+		button.transform.y = 300;
+		Systems.director.rootObject.transform.addChild( button.transform );
 		
 	}
 	
