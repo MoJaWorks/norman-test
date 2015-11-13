@@ -1,5 +1,6 @@
 package uk.co.mojaworks.normantest;
 import lime.graphics.console.TextureFormat;
+import uk.co.mojaworks.norman.components.renderer.TextRenderer;
 import uk.co.mojaworks.norman.components.renderer.TextRenderer.TextAlign;
 import uk.co.mojaworks.norman.components.renderer.TextRenderer.TextFormat;
 import uk.co.mojaworks.norman.components.text.TextInput;
@@ -35,7 +36,12 @@ class TestEngine extends NormanApp
 		
 		var font : BitmapFont = FontUtils.createFontFromAsset( "default/arial.fnt" );
 		var text : GameObject = SpriteFactory.createTextSprite( "Hello", new TextFormat( font, 30 ), "text" );
-		text.renderer.color = Color.WHITE;
+		
+		var renderer : TextRenderer = cast text.renderer;
+		renderer.color = Color.WHITE;
+		renderer.align = TextAlign.Right;
+		renderer.wrapWidth = Systems.viewport.stageWidth;
+		
 		text.addComponent( new TextInputKeyboardDelegate() );
 		text.addComponent( new TextInputUIDelegate() );
 		text.addComponent( new TextInput() );
