@@ -30,7 +30,7 @@
     <option noInlineOnDebug="False" />
     <option mainClass="ApplicationMain" />
     <option enabledebug="True" />
-    <option additional="#--macro keep(&quot;uk.co.mojaworks.normantest.TestEngine&quot;)&#xA;-debug " />
+    <option additional="#--macro keep(&quot;uk.co.mojaworks.normantest.TestEngine&quot;)" />
   </build>
   <!-- haxelib libraries -->
   <haxelib>
