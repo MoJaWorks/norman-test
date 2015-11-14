@@ -38,14 +38,20 @@ class TestEngine extends NormanApp
 		var text : GameObject = SpriteFactory.createTextSprite( "Hello", new TextFormat( font, 30 ), "text" );
 		
 		var renderer : TextRenderer = cast text.renderer;
-		renderer.color = Color.WHITE;
-		renderer.align = TextAlign.Right;
+		renderer.color = Color.RED;
+		renderer.align = TextAlign.Left;
 		renderer.wrapWidth = Systems.viewport.stageWidth;
 		
 		text.addComponent( new TextInputKeyboardDelegate() );
 		text.addComponent( new TextInputUIDelegate() );
-		text.addComponent( new TextInput() );
+		
+		var input : TextInput = new TextInput();
+		//input.multiline = false;	
+		//input.restrictTo = "0123456789";
+		text.addComponent( input );
 		Systems.director.rootObject.transform.addChild( text.transform );
+		
+		window.enableTextEvents = true;
 		
 	}
 	
