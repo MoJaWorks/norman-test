@@ -14,6 +14,8 @@
 	<window width="480" height="800" unless="mobile" />
 	<window orientation="landscape" vsync="false" antialiasing="0" if="cpp" />
 	
+	<set name="includeDefaultAssets"/>
+	
 	<!-- classpath, haxe libs -->
 	<source path="src" />
 	
@@ -23,6 +25,7 @@
 	<!-- assets -->
 	<icon path="assets/openfl.svg" />
 	<assets path="assets/img" rename="img" /> 
+	<assets path="assets/audio" rename="audio" /> 
 	
 	<!-- optimize output
 	<haxeflag name="-dce full" /> -->

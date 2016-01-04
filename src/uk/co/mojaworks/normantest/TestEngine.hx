@@ -1,5 +1,7 @@
 package uk.co.mojaworks.normantest;
+import haxe.Timer;
 import lime.graphics.console.TextureFormat;
+import motion.Actuate;
 import uk.co.mojaworks.norman.components.renderer.TextRenderer;
 import uk.co.mojaworks.norman.components.renderer.TextRenderer.TextAlign;
 import uk.co.mojaworks.norman.components.renderer.TextRenderer.TextFormat;
@@ -34,24 +36,30 @@ class TestEngine extends NormanApp
 	{
 		super.onStartupComplete();
 		
-		var font : BitmapFont = FontUtils.createFontFromAsset( "default/arial.fnt" );
-		var text : GameObject = SpriteFactory.createTextSprite( "Hello", new TextFormat( font, 30 ), "text" );
+		Systems.audio.playMusicWithResourceId( "audio/loop.ogg", 1, 0 );
 		
-		var renderer : TextRenderer = cast text.renderer;
-		renderer.color = Color.RED;
-		renderer.align = TextAlign.Left;
-		renderer.wrapWidth = Systems.viewport.stageWidth;
+		Timer.delay( function() {
+			Systems.audio.playLoopingWithResourceId( "audio/test.ogg", 0.25 );
+			Systems.audio.playOneShotWithResourceId( "audio/blip.ogg", 2 );
+		}, 2000 );
 		
-		text.addComponent( new TextInputKeyboardDelegate() );
-		text.addComponent( new TextInputUIDelegate() );
-		
-		var input : TextInput = new TextInput();
-		//input.multiline = false;	
-		//input.restrictTo = "0123456789";
-		text.addComponent( input );
-		Systems.director.rootObject.transform.addChild( text.transform );
-		
-		window.enableTextEvents = true;
+		Actuate.tween( Systems.audio, 0.5, { musicVolume: 0 } ).delay(4).onComplete( function() {
+			
+			Systems.audio.playOneShotWithResourceId( "audio/blip.ogg", 2 );
+			Actuate.tween( Systems.audio, 0.5, { sfxVolume: 0 } ).delay(2);
+			Actuate.tween( Systems.audio, 0.5, { musicVolume: 1 } ).delay(2).onComplete( function() {
+			
+				Systems.audio.playOneShotWithResourceId( "audio/blip.ogg", 2 );
+				Actuate.tween( Systems.audio, 0.5, { sfxVolume: 1 } ).delay(2);
+				Actuate.tween( Systems.audio, 0.5, { masterVolume: 0 } ).delay(4).onComplete( function() {
+				
+					Systems.audio.playOneShotWithResourceId( "audio/blip.ogg", 2 );
+				
+				});
+			
+			});
+			
+		});
 		
 	}
 	
