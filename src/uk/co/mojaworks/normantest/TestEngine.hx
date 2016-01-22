@@ -3,6 +3,7 @@ import haxe.Timer;
 import lime.graphics.console.TextureFormat;
 import lime.math.Rectangle;
 import motion.Actuate;
+import uk.co.mojaworks.norman.components.renderer.Scale3ImageRenderer.Scale3Type;
 import uk.co.mojaworks.norman.components.renderer.TextRenderer;
 import uk.co.mojaworks.norman.components.renderer.TextRenderer.TextAlign;
 import uk.co.mojaworks.norman.components.renderer.TextRenderer.TextFormat;
@@ -39,17 +40,17 @@ class TestEngine extends NormanApp
 		
 		var scale : Float = 5;
 		
-		var rect : GameObject = SpriteFactory.createScale9ImageSpriteFromAsset("img/BlueBtn.png", new Rectangle( 10, 10, 46, 46 ) );
-		rect.transform.scale = scale;
+		var rect : GameObject = SpriteFactory.createScale3ImageSpriteFromAsset("img/BlueBtn.png", new Rectangle( 10, 10, 46, 46 ), Scale3Type.Vertical );
+		rect.transform.scaleY = scale;
 		Systems.director.rootObject.transform.addChild( rect.transform );
 		
 		var rect2 : GameObject = SpriteFactory.createImageSpriteFromAsset("img/BlueBtn.png" );
-		rect2.transform.scale = scale;
+		rect2.transform.scaleY = scale;
 		rect2.transform.x = rect.renderer.scaledWidth + 20;
 		Systems.director.rootObject.transform.addChild( rect2.transform );
 		
 		var rect3 : GameObject = SpriteFactory.createImageSpriteFromAsset("img/BlueBtn.png" );
-		rect3.transform.scale = scale;
+		rect3.transform.scaleY = scale;
 		rect3.transform.y = rect.renderer.scaledHeight + 20;
 		Systems.director.rootObject.transform.addChild( rect3.transform );
 		
