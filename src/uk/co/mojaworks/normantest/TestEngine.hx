@@ -1,6 +1,7 @@
 package uk.co.mojaworks.normantest;
 import haxe.Timer;
 import lime.graphics.console.TextureFormat;
+import lime.math.Rectangle;
 import motion.Actuate;
 import uk.co.mojaworks.norman.components.renderer.TextRenderer;
 import uk.co.mojaworks.norman.components.renderer.TextRenderer.TextAlign;
@@ -26,8 +27,8 @@ class TestEngine extends NormanApp
 	public function new() {
 		
 		var config : NormanConfigData = new NormanConfigData();
-		config.targetScreenWidth = 720;
-		config.targetScreenHeight = 1280;
+		config.targetScreenWidth = 480;
+		config.targetScreenHeight = 800;
 		
 		super( config );
 	}
@@ -36,30 +37,23 @@ class TestEngine extends NormanApp
 	{
 		super.onStartupComplete();
 		
-		Systems.audio.playMusicWithResourceId( "audio/loop.ogg", 1, 0 );
+		var scale : Float = 5;
 		
-		Timer.delay( function() {
-			Systems.audio.playLoopingWithResourceId( "audio/test.ogg", 0.25 );
-			Systems.audio.playOneShotWithResourceId( "audio/blip.ogg", 2 );
-		}, 2000 );
+		var rect : GameObject = SpriteFactory.createScale9ImageSpriteFromAsset("img/BlueBtn.png", new Rectangle( 10, 10, 46, 46 ) );
+		rect.transform.scale = scale;
+		Systems.director.rootObject.transform.addChild( rect.transform );
 		
-		Actuate.tween( Systems.audio, 0.5, { musicVolume: 0 } ).delay(4).onComplete( function() {
-			
-			Systems.audio.playOneShotWithResourceId( "audio/blip.ogg", 2 );
-			Actuate.tween( Systems.audio, 0.5, { sfxVolume: 0 } ).delay(2);
-			Actuate.tween( Systems.audio, 0.5, { musicVolume: 1 } ).delay(2).onComplete( function() {
-			
-				Systems.audio.playOneShotWithResourceId( "audio/blip.ogg", 2 );
-				Actuate.tween( Systems.audio, 0.5, { sfxVolume: 1 } ).delay(2);
-				Actuate.tween( Systems.audio, 0.5, { masterVolume: 0 } ).delay(4).onComplete( function() {
-				
-					Systems.audio.playOneShotWithResourceId( "audio/blip.ogg", 2 );
-				
-				});
-			
-			});
-			
-		});
+		var rect2 : GameObject = SpriteFactory.createImageSpriteFromAsset("img/BlueBtn.png" );
+		rect2.transform.scale = scale;
+		rect2.transform.x = rect.renderer.scaledWidth + 20;
+		Systems.director.rootObject.transform.addChild( rect2.transform );
+		
+		var rect3 : GameObject = SpriteFactory.createImageSpriteFromAsset("img/BlueBtn.png" );
+		rect3.transform.scale = scale;
+		rect3.transform.y = rect.renderer.scaledHeight + 20;
+		Systems.director.rootObject.transform.addChild( rect3.transform );
+		
+		
 		
 	}
 	
