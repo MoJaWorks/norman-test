@@ -2,8 +2,11 @@ package uk.co.mojaworks.normantest;
 import haxe.Timer;
 import lime.graphics.console.TextureFormat;
 import lime.math.Rectangle;
+import lime.ui.KeyModifier;
 import motion.Actuate;
+import uk.co.mojaworks.norman.components.renderer.MaskedRenderTextureRenderer;
 import uk.co.mojaworks.norman.components.renderer.Scale3ImageRenderer.Scale3Type;
+import uk.co.mojaworks.norman.components.renderer.ShapeRenderer.FillShape;
 import uk.co.mojaworks.norman.components.renderer.TextRenderer;
 import uk.co.mojaworks.norman.components.renderer.TextRenderer.TextAlign;
 import uk.co.mojaworks.norman.components.renderer.TextRenderer.TextFormat;
@@ -25,6 +28,7 @@ import uk.co.mojaworks.norman.utils.FontUtils;
  */
 class TestEngine extends NormanApp
 {
+	var mask:GameObject;
 	public function new() {
 		
 		var config : NormanConfigData = new NormanConfigData();
@@ -40,22 +44,27 @@ class TestEngine extends NormanApp
 		
 		var scale : Float = 5;
 		
-		var rect : GameObject = SpriteFactory.createScale3ImageSpriteFromAsset("img/BlueBtn.png", new Rectangle( 10, 10, 46, 46 ), Scale3Type.Vertical );
-		rect.transform.scaleY = scale;
-		Systems.director.rootObject.transform.addChild( rect.transform );
 		
-		var rect2 : GameObject = SpriteFactory.createImageSpriteFromAsset("img/BlueBtn.png" );
-		rect2.transform.scaleY = scale;
-		rect2.transform.x = rect.renderer.scaledWidth + 20;
-		Systems.director.rootObject.transform.addChild( rect2.transform );
+		mask = SpriteFactory.createMask( 300, 300, "mask" );
+		mask.renderer.color = Color.YELLOW;
+		mask.transform.x = 100;
+		mask.transform.rotation = 0.5;
+		Systems.director.rootObject.transform.addChild( mask.transform );
 		
-		var rect3 : GameObject = SpriteFactory.createImageSpriteFromAsset("img/BlueBtn.png" );
-		rect3.transform.scaleY = scale;
-		rect3.transform.y = rect.renderer.scaledHeight + 20;
-		Systems.director.rootObject.transform.addChild( rect3.transform );
+		var rect : GameObject = SpriteFactory.createFilledSprite( Color.WHITE, 300, 300 );
+		mask.transform.addChild( rect.transform );
 		
+		var maskmask : GameObject = SpriteFactory.createFilledSprite( Color.WHITE, 100, 100, FillShape.Ellipse, "maskmask" );
+		maskmask.transform.x = 250;
+		cast(mask.renderer, MaskedRenderTextureRenderer).mask.transform.addChild( maskmask.transform );
 		
-		
+		Systems.input.keyDown.add( on1KeyDown );
+	}
+	
+	function on1KeyDown( key : Int, modifier : KeyModifier ) : Void
+	{
+		var mask = MaskedRenderTextureRenderer.getFromObject( mask );
+		mask.maskEnabled = !mask.maskEnabled;
 	}
 	
 	override public function updateApp(seconds:Float):Void 
