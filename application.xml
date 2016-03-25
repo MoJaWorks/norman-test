@@ -19,7 +19,6 @@
 	<!-- classpath, haxe libs -->
 	<source path="src" />
 	
-	<haxelib name="actuate" /> 
 	<haxelib name="norman" /> 
 	
 	<!-- assets -->

@@ -42,34 +42,7 @@ class TestEngine extends NormanApp
 	{
 		super.onStartupComplete();
 		
-		var scale : Float = 5;
 		
-		
-		mask = SpriteFactory.createMask( 300, 300, "mask" );
-		mask.renderer.color = Color.YELLOW;
-		mask.transform.x = 100;
-		mask.transform.rotation = 0.5;
-		Systems.director.rootObject.transform.addChild( mask.transform );
-		
-		var rect : GameObject = SpriteFactory.createFilledSprite( Color.WHITE, 300, 300 );
-		mask.transform.addChild( rect.transform );
-		
-		var maskmask : GameObject = SpriteFactory.createFilledSprite( Color.WHITE, 100, 100, FillShape.Ellipse, "maskmask" );
-		maskmask.transform.x = 250;
-		cast(mask.renderer, MaskedRenderTextureRenderer).mask.transform.addChild( maskmask.transform );
-		
-		Systems.input.keyDown.add( on1KeyDown );
-	}
-	
-	function on1KeyDown( key : Int, modifier : KeyModifier ) : Void
-	{
-		var mask = MaskedRenderTextureRenderer.getFromObject( mask );
-		mask.maskEnabled = !mask.maskEnabled;
-	}
-	
-	override public function updateApp(seconds:Float):Void 
-	{
-		super.updateApp(seconds);
 	}
 		
 }
