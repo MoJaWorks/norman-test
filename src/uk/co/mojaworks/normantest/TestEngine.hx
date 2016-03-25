@@ -1,26 +1,10 @@
 package uk.co.mojaworks.normantest;
 import haxe.Timer;
-import lime.graphics.console.TextureFormat;
-import lime.math.Rectangle;
-import lime.ui.KeyModifier;
-import motion.Actuate;
-import uk.co.mojaworks.norman.components.renderer.MaskedRenderTextureRenderer;
-import uk.co.mojaworks.norman.components.renderer.Scale3ImageRenderer.Scale3Type;
-import uk.co.mojaworks.norman.components.renderer.ShapeRenderer.FillShape;
-import uk.co.mojaworks.norman.components.renderer.TextRenderer;
-import uk.co.mojaworks.norman.components.renderer.TextRenderer.TextAlign;
-import uk.co.mojaworks.norman.components.renderer.TextRenderer.TextFormat;
-import uk.co.mojaworks.norman.components.text.TextInput;
-import uk.co.mojaworks.norman.components.text.TextInputKeyboardDelegate;
-import uk.co.mojaworks.norman.components.text.TextInputUIDelegate;
+import uk.co.mojaworks.norman.NormanApp;
+import uk.co.mojaworks.norman.components.Transform;
+import uk.co.mojaworks.norman.components.renderer.BaseRenderer;
 import uk.co.mojaworks.norman.data.NormanConfigData;
 import uk.co.mojaworks.norman.factory.GameObject;
-import uk.co.mojaworks.norman.factory.SpriteFactory;
-import uk.co.mojaworks.norman.NormanApp;
-import uk.co.mojaworks.norman.systems.Systems;
-import uk.co.mojaworks.norman.text.BitmapFont;
-import uk.co.mojaworks.norman.utils.Color;
-import uk.co.mojaworks.norman.utils.FontUtils;
 
 /**
  * ...
@@ -42,7 +26,23 @@ class TestEngine extends NormanApp
 	{
 		super.onStartupComplete();
 		
+		var start = Timer.stamp();
 		
+		for ( i in 0...999 ) {
+			var transform : Transform = core.view.root.getThing( Transform );
+		}
+		
+		var elapsed = Timer.stamp() - start;
+		trace("Get took " + elapsed + " seconds");
+		
+		start = Timer.stamp();
+		
+		for ( i in 0...999 ) {
+			var transform : Transform = cast core.view.root.getComponent( Transform.TYPE );
+		}
+		
+		elapsed = Timer.stamp() - start;
+		trace("getComponent took " + elapsed + " seconds");
 	}
 		
 }
