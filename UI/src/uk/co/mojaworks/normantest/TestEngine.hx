@@ -1,11 +1,10 @@
 package uk.co.mojaworks.normantest;
 import lime.math.Rectangle;
 import uk.co.mojaworks.norman.NormanApp;
-import uk.co.mojaworks.norman.components.delegates.BaseUIDelegate;
+import uk.co.mojaworks.norman.components.ui.button.SimpleButtonUIDelegate;
 import uk.co.mojaworks.norman.data.NormanConfigData;
 import uk.co.mojaworks.norman.factory.GameObject;
 import uk.co.mojaworks.norman.factory.SpriteFactory;
-import uk.co.mojaworks.norman.factory.UIFactory;
 
 /**
  * ...
@@ -27,9 +26,12 @@ class TestEngine extends NormanApp
 	{
 		super.onStartupComplete();
 		
-		var button = UIFactory.createImageButton( new ButtonUIDelegate(), core.renderer.createTextureFromAsset( "img/BlueBtn.png" ) );
-		button.renderer.scaledWidth = 300;
-		button.renderer.scaledHeight = 300;
+		var button : GameObject = SpriteFactory.createScale9ImageSpriteFromAsset( "img/BlueBtn.png", new Rectangle( 10, 10, 46, 46 ) );
+		button.add( new SimpleButtonUIDelegate() );
+		button.renderer.scaledWidth = 100;
+		button.renderer.scaledHeight = 50;
+		button.transform.x = 20;
+		button.transform.y = 50;
 		core.view.root.transform.addChild( button.transform );
 		
 	}
