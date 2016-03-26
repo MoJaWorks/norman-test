@@ -21,7 +21,7 @@
     <class path="D:\Projects\Haxe\haxelib\msignal\1,2,2" />
     <class path="D:\Projects\Haxe\haxelib\actuate\1,8,6" />
     <class path="src" />
-    <class path="bin\windows\cpp\haxe" />
+    <class path="bin\windows\neko\haxe" />
   </classpaths>
   <!-- Build options -->
   <build>
