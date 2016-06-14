@@ -1,9 +1,13 @@
 package uk.co.mojaworks.normantest;
-import lime.math.Rectangle;
+import geoff.App;
+import geoff.utils.Assets;
+import geoff.utils.Color;
 import uk.co.mojaworks.norman.NormanApp;
+import uk.co.mojaworks.norman.components.renderer.TextRenderer.TextFormat;
 import uk.co.mojaworks.norman.data.NormanConfigData;
 import uk.co.mojaworks.norman.factory.GameObject;
-import uk.co.mojaworks.norman.factory.SpriteFactory;
+import uk.co.mojaworks.norman.factory.UIFactory;
+import uk.co.mojaworks.norman.utils.FontUtils;
 
 /**
  * ...
@@ -25,11 +29,16 @@ class TestEngine extends NormanApp
 	{
 		super.onStartupComplete();
 		
-		var hello : GameObject = SpriteFactory.createScale9ImageSpriteFromAsset( "img/BlueBtn.png", new Rectangle(10, 10, 46, 46) );
-		hello.renderer.scaledWidth = 300;
-		hello.renderer.scaledHeight = 300;
-		core.view.root.transform.addChild( hello.transform );
+		var textEntry : GameObject = UIFactory.createTextInput( "Hello", new TextFormat( FontUtils.createFontFromAsset( Assets.getPath( "default/arial.fnt" ) ), 20 ), "text" );
+		textEntry.renderer.color = Color.WHITE;
+		core.view.root.transform.addChild( textEntry.transform );
 		
+	}
+	
+	
+	public static function main() : Void 
+	{
+		App.create( new TestEngine() ); 
 	}
 		
 }

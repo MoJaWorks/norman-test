@@ -1,0 +1,26 @@
+{
+	
+	"name":			"Sandbox",
+	"packagename":	"norman.sandbox",
+	"version":		"0.0.1",
+	"main":			"uk.co.mojaworks.normantest.TestEngine",
+	"src":
+	[
+		"src"
+	],
+	"haxelib":
+	[
+		"norman"
+	],
+	"window":
+	{
+		"width": "480",
+		"height": "800",
+		"orientation": "portrait"
+	},
+	"android":
+	{
+		"version":	"21"
+	}
+
+}
