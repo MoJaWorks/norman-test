@@ -20,12 +20,12 @@
   </classpaths>
   <!-- Build options -->
   <build>
-    <option directives="java-android&#xA;android&#xA;geoff_java&#xA;mobile&#xA;actuate_manual_time&#xA;actuate_manual_update" />
+    <option directives="windows&#xA;static_link&#xA;HX_WINDOWS&#xA;ABI=-MD&#xA;geoff_cpp&#xA;actuate_manual_time&#xA;actuate_manual_update&#xA;no_console" />
     <option flashStrict="False" />
     <option noInlineOnDebug="False" />
     <option mainClass="uk.co.mojaworks.normantest.TestEngine" />
     <option enabledebug="True" />
-    <option additional="-java-lib C:\Development\AndroidSDK\platforms/android-21/android.jar&#xA;-debug" />
+    <option additional="" />
   </build>
   <!-- haxelib libraries -->
   <haxelib>

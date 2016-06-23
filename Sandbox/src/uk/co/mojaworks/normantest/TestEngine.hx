@@ -1,5 +1,7 @@
 package uk.co.mojaworks.normantest;
 import geoff.App;
+import geoff.audio.AudioChannel;
+import geoff.audio.AudioSource;
 import geoff.utils.Assets;
 import geoff.utils.Color;
 import uk.co.mojaworks.norman.NormanApp;
@@ -29,9 +31,11 @@ class TestEngine extends NormanApp
 	{
 		super.onStartupComplete();
 		
-		var textEntry : GameObject = UIFactory.createTextInput( "Hello", new TextFormat( FontUtils.createFontFromAsset( Assets.getPath( "default/arial.fnt" ) ), 20 ), "text" );
-		textEntry.renderer.color = Color.WHITE;
-		core.view.root.transform.addChild( textEntry.transform );
+		var source : AudioSource = App.current.platform.audio.player.loadAsset( "drumloop", Assets.getPath( "audio/loop.ogg" ) );
+		var source2 : AudioSource = App.current.platform.audio.player.loadAsset( "scream", Assets.getPath( "audio/test.ogg" ) );
+		
+		var channel : AudioChannel = App.current.platform.audio.player.playLooping( "drumloop", 1 );
+		var channel : AudioChannel = App.current.platform.audio.player.playLooping( "scream", 1 );
 		
 	}
 	
