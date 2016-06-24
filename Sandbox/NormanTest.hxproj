@@ -20,12 +20,12 @@
   </classpaths>
   <!-- Build options -->
   <build>
-    <option directives="windows&#xA;static_link&#xA;HX_WINDOWS&#xA;ABI=-MD&#xA;geoff_cpp&#xA;actuate_manual_time&#xA;actuate_manual_update&#xA;no_console" />
+    <option directives="HXCPP_DEBUG_LINK&#xA;HXCPP_STACK_TRACE&#xA;HXCPP_STACK_LINE&#xA;HXCPP_CHECK_POINTER&#xA;windows&#xA;desktop&#xA;static_link&#xA;HX_WINDOWS&#xA;ABI=-MD&#xA;geoff_cpp&#xA;actuate_manual_time&#xA;actuate_manual_update" />
     <option flashStrict="False" />
     <option noInlineOnDebug="False" />
     <option mainClass="uk.co.mojaworks.normantest.TestEngine" />
     <option enabledebug="True" />
-    <option additional="" />
+    <option additional="-debug" />
   </build>
   <!-- haxelib libraries -->
   <haxelib>

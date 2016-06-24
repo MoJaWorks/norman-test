@@ -2,11 +2,16 @@
 -lib norman
 -cpp bin/windows/build
 -main uk.co.mojaworks.normantest.TestEngine
+-debug
+-D HXCPP_DEBUG_LINK
+-D HXCPP_STACK_TRACE
+-D HXCPP_STACK_LINE
+-D HXCPP_CHECK_POINTER
 -D windows
+-D desktop
 -D static_link
 -D HX_WINDOWS
 -D ABI=-MD
 -D geoff_cpp
 -D actuate_manual_time
 -D actuate_manual_update
--D no_console
