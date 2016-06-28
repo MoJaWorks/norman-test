@@ -32,7 +32,11 @@ class TestEngine extends NormanApp
 		App.current.platform.audio.loadAsset( "scream", Assets.getPath( "audio/test.ogg" ) );
 		App.current.platform.audio.playLooping( "scream" );
 		
-		var image : GameObject = SpriteFactory.createImageSpriteFromAsset( Assets.getPath( "img/zombie.png" ) );
+		var image2 : GameObject = SpriteFactory.createImageSpriteFromAsset( Assets.getPath( "img/BlueBtn.png" ) );
+		image2.transform.y = 700;
+		core.view.root.transform.addChild( image2.transform );
+		
+		var image : GameObject = SpriteFactory.createImageSpriteFromAsset( Assets.getPath( "img/zombie.png::barrel.png" ) );
 		core.view.root.transform.addChild( image.transform );
 		
 	}

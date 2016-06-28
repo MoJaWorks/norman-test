@@ -20,12 +20,12 @@
   </classpaths>
   <!-- Build options -->
   <build>
-    <option directives="HXCPP_DEBUG_LINK&#xA;HXCPP_STACK_TRACE&#xA;HXCPP_STACK_LINE&#xA;HXCPP_CHECK_POINTER&#xA;windows&#xA;desktop&#xA;static_link&#xA;HX_WINDOWS&#xA;ABI=-MD&#xA;geoff_cpp&#xA;actuate_manual_time&#xA;actuate_manual_update" />
+    <option directives="java-android&#xA;android&#xA;geoff_java&#xA;mobile&#xA;actuate_manual_time&#xA;actuate_manual_update" />
     <option flashStrict="False" />
     <option noInlineOnDebug="False" />
     <option mainClass="uk.co.mojaworks.normantest.TestEngine" />
     <option enabledebug="True" />
-    <option additional="-debug" />
+    <option additional="-java-lib C:\Development\AndroidSDK\platforms/android-21/android.jar&#xA;-java-lib C:\Users\smorris\Documents\MyProjects\Geoff\Geoff\../template/android/libs/jorbis-oggdecoder-1.1.jar&#xA;-debug" />
   </build>
   <!-- haxelib libraries -->
   <haxelib>
