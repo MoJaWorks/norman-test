@@ -28,9 +28,9 @@ class TestEngine extends NormanApp
 	{
 		super.onStartupComplete();
 		
-		App.current.platform.audio.loadAsset( "scream", Assets.getPath( "audio/test.ogg" ) );
-		App.current.platform.audio.loadAsset( "loop", Assets.getPath( "audio/loop.ogg" ) );
-		App.current.platform.audio.playLooping( "loop" );
+		core.audio.loadAsset( "scream", Assets.getPath( "audio/test.ogg" ) );
+		core.audio.loadAsset( "loop", Assets.getPath( "audio/loop.ogg" ) );
+		core.audio.playMusic( "loop" );
 		
 		var image2 : GameObject = SpriteFactory.createImageSpriteFromAsset( Assets.getPath( "img/BlueBtn.png" ) );
 		var uiListener : UIDelegate = cast image2.add( new UIDelegate() );
@@ -46,7 +46,7 @@ class TestEngine extends NormanApp
 	
 	function onImageClicked( e : PointerEvent ) 
 	{
-		App.current.platform.audio.playOneShot( "scream" );
+		core.audio.playMusic( "scream", 1, 3 );
 	}
 	
 	
